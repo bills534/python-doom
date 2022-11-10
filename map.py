@@ -23,7 +23,7 @@ class Map:
     def get_map(self):
         for j, row in enumerate(self.mini_map):
             for i, value in enumerate(row):
-                if value:
+                if value:  # if minimap array is not blank, generate an x.y coordinate and put into world map array
                     self.world_map[(i,j)] = value
     
     def draw(self):

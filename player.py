@@ -33,15 +33,28 @@ class Player:
             dy += speed_cos
 
         # apply calculated movement
-        self.x += dx
-        self.y += dy
+        self.check_wall_collision(dx, dy)
 
+        # rotation
         if keys[pg.K_LEFT]:
             self.angle -= PLAYER_ROT_SPEED * self.game.delta_time
         if keys[pg.K_RIGHT]:
             self.angle += PLAYER_ROT_SPEED * self.game.delta_time
         
         self.angle %= math.tau  # tau is 2*pi, I have no idea why this is here
+
+    
+    def check_wall(self, x, y):
+        # if the player position is not listed in the world map then it is valid
+        # world map is effectivly a map of restricted areas
+        return (x, y) not in self.game.map.world_map
+    
+
+    def check_wall_collision(self, dx, dy):
+        if self.check_wall(int(self.x + dx), int(self.y)):
+            self.x += dx
+        if self.check_wall(int(self.x), int(self.y + dy)):
+            self.y += dy
 
     def draw(self):
         pg.draw.line(
