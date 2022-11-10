@@ -57,13 +57,13 @@ class Player:
             self.y += dy
 
     def draw(self):
-        pg.draw.line(
-            self.game.screen,  # surface
-            'yellow',  # color
-            (self.x * 100, self.y * 100),  # start position
-            (self.x * 100 + WIDTH * math.cos(self.angle), self.y * 100 + WIDTH * math.sin(self.angle)),  # end position
-            2  # width
-        )
+        # pg.draw.line(
+        #     self.game.screen,  # surface
+        #     'yellow',  # color
+        #     (self.x * 100, self.y * 100),  # start position
+        #     (self.x * 100 + WIDTH * math.cos(self.angle), self.y * 100 + WIDTH * math.sin(self.angle)),  # end position
+        #     2  # width
+        # )
         pg.draw.circle(
             self.game.screen,  # surface
             'green',  # color
