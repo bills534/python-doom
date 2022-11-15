@@ -2,6 +2,7 @@ import pygame as pg
 
 _ = False  # this makes the following map more 'readable'
 mini_map = [
+    #0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
     [_, 1, 1, 1, 1, 1, 1, 1, 5, 1, 1, 1, 1, 1, 1, _],
     [1, _, _, _, _, _, _, _, _, _, _, _, _, _, _, 1],
     [1, _, 1, 1, 1, 1, 1, _, _, _, 2, _, _, _, _, 1],
